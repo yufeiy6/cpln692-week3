@@ -31,9 +31,37 @@
     Start code
 
     ===================== */
+//problem 1
+var numArr = []
+for (let i = 1; i<1000; i++){
+  if (i%3===0){
+    numArr.push(i);
+  } else if (i%5===0){
+    numArr.push(i);
+  }
+}
+let numSum=0
+for (let i=0; i<numArr.length; i++){
+  numSum=numSum+numArr[i];
+}
+console.log(numSum);
 
-
-
+//problem 2
+const arrSum = arr => arr.reduce((a,b) => a + b, 0)
+var numArr2 = [1,2];
+let x = 1;
+let y = 2;
+let evenSum = 2
+while (arrSum(numArr2) < 4000000){
+  let z = x + y
+  if (z%2===0){
+    evenSum = evenSum + z;
+  }
+  numArr2.push(z);
+  x = y;
+  y = z;
+}
+console.log(evenSum);
     /* =====================
 
     End code

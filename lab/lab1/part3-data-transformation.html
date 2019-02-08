@@ -13,8 +13,8 @@
 
     <!--javascript imports-->
     <script src="leaflet.js"></script>
-    <script src="part4-data-clean.js"></script>
-    <script src="part4-data-dirty.js"></script>
+    <script src="part3-data-clean.js"></script>
+    <script src="part3-data-dirty.js"></script>
 
     <script>
 
@@ -70,9 +70,28 @@
     Start code to filter data
 
     ===================== */
+//for clean data
+var dataFiltered = []
+if (i=1,i<=data.length,i++){
+  if (data[i][3]>20){
+    dataFiltered.push(data[i])
+  }
+}
+console.log(dataFiltered);
 
-
-
+/* working with dirty data
+var data = bikeArrayDirty
+var dataFiltered = []
+var DataFilter = (dataArr) => {
+  for (let i=0; i<data.length; i++){
+    if (parseFloat(data[i][3]>20){
+        dataFiltered.push(data[i])
+    }
+  }
+}
+DataFilter(data);
+console.log(dataFiltered)
+*/
     /* =====================
 
     End code to filter data
@@ -98,7 +117,8 @@
 
     ===================== */
 
-
+    var makeAMarker = (obj) => {return L.marker([obj[0], obj[1]]).bindPopup(obj[2]+obj[3]).openPopup()}
+    for (var i=0; i < dataFiltered.length; i++){ makeAMarker(dataFiltered[i]).addTo(map) }
 
     /* =====================
 
