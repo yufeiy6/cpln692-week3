@@ -84,7 +84,7 @@ var TempArr = [[39.952238, -75.201702,'Top1'],[39.952927, -75.217711,'Top2'],[39
 TempArr.unshift(header);
 for (i=0; i < TempArr.length; i++){console.log(TempArr[i])};
 var makeAMarker = (obj) => {return L.marker([obj[0], obj[1]]).bindPopup(obj[2])}
-for (var i=1; i <= TempArr.length; i++){ makeAMarker(TempArr[i]).addTo(map) }
+for (var i=1; i < TempArr.length; i++){ makeAMarker(TempArr[i]).addTo(map) }
 
 
     /* =====================

@@ -67,5 +67,5 @@ console.log('Which games are owned by both Ross and Nathan', query7);
 Which games are exclusive to collections? In other words, only owned by either Ross or Nathan.
 ===================== */
 
-var query8 = _.union(_.difference(rossGameList, nathanGameList), _.difference(rossGameList, nathanGameList));
+var query8 = _.union(_.difference(rossGameList, nathanGameList), _.difference(nathanGameList, rossGameList));
 console.log('Which games are exclusive to one collection? In other words, only owned by either Ross or Nathan (but not both!).', query8);

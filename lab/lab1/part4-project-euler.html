@@ -48,18 +48,16 @@ console.log(numSum);
 
 //problem 2
 const arrSum = arr => arr.reduce((a,b) => a + b, 0)
-var numArr2 = [1,2];
+var numArr2 = [0,1];
 let x = 1;
-let y = 2;
-let evenSum = 2
-while (arrSum(numArr2) < 4000000){
-  let z = x + y
-  if (z%2===0){
-    evenSum = evenSum + z;
+let evenSum = 0;
+while (numArr2[0]+numArr2[1] < 4000000){
+  x = numArr2[0]+numArr2[1];
+  numArr2[0]=numArr2[1];
+  numArr2[1] = x;
+  if (x%2===0){
+    evenSum = evenSum + x;
   }
-  numArr2.push(z);
-  x = y;
-  y = z;
 }
 console.log(evenSum);
     /* =====================

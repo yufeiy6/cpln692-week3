@@ -63,35 +63,41 @@
 
     ===================== */
 
-    var data = bikeArrayClean;
+        var data = bikeArrayClean;
 
     /* =====================
 
     Start code to filter data
 
     ===================== */
-//for clean data
-var dataFiltered = []
-if (i=1,i<=data.length,i++){
-  if (data[i][3]>20){
-    dataFiltered.push(data[i])
-  }
-}
-console.log(dataFiltered);
 
-/* working with dirty data
-var data = bikeArrayDirty
-var dataFiltered = []
-var DataFilter = (dataArr) => {
+
+    var dataFiltered = [];
+    var Filter = (data) =>{
+      for (var i=0; i<data.length; i++){
+        if (data[i][3]>20) {
+          dataFiltered.push(data[i])
+        }
+      }
+    }
+    Filter(data)
+    console.log(dataFiltered)
+
+/* Dirty data
+var data = bikeArrayDirty;
+var dataFiltered=[]
+var Filter = (data)=>{
   for (let i=0; i<data.length; i++){
-    if (parseFloat(data[i][3]>20){
-        dataFiltered.push(data[i])
+    if (parseFloat(data[i][3])>20) {
+      dataFiltered.push(data[i])
+      }
     }
   }
-}
-DataFilter(data);
+Filter(data)
 console.log(dataFiltered)
 */
+
+
     /* =====================
 
     End code to filter data
@@ -117,8 +123,13 @@ console.log(dataFiltered)
 
     ===================== */
 
-    var makeAMarker = (obj) => {return L.marker([obj[0], obj[1]]).bindPopup(obj[2]+obj[3]).openPopup()}
-    for (var i=0; i < dataFiltered.length; i++){ makeAMarker(dataFiltered[i]).addTo(map) }
+    var addMarker = (map)=>{
+      for (let i=0; i<dataFiltered.length; i++){
+        L.marker([dataFiltered[i][1],dataFiltered[i][0]]).addTo(map).bindPopup(dataFiltered[i][2])
+        .openPopup();
+      }
+    }
+    addMarker(map)
 
     /* =====================
 
